@@ -33,11 +33,11 @@ namespace WindowsFormsApp1
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.contactID = new System.Windows.Forms.Label();
             this.textBoxContactID = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.ContactName = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxContactNo = new System.Windows.Forms.TextBox();
             this.ContactNo = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.Address = new System.Windows.Forms.Label();
             this.comboGender = new System.Windows.Forms.ComboBox();
             this.Gender = new System.Windows.Forms.Label();
@@ -45,12 +45,12 @@ namespace WindowsFormsApp1
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.labelSearch = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +64,6 @@ namespace WindowsFormsApp1
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
-            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
             // contactID
             // 
@@ -82,17 +81,17 @@ namespace WindowsFormsApp1
             this.textBoxContactID.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxContactID.Location = new System.Drawing.Point(184, 196);
             this.textBoxContactID.Name = "textBoxContactID";
+            this.textBoxContactID.ReadOnly = true;
             this.textBoxContactID.Size = new System.Drawing.Size(254, 27);
             this.textBoxContactID.TabIndex = 2;
             // 
-            // textBox1
+            // textBoxName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(184, 272);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(254, 27);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxName.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxName.Location = new System.Drawing.Point(184, 272);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(254, 27);
+            this.textBoxName.TabIndex = 4;
             // 
             // ContactName
             // 
@@ -105,13 +104,13 @@ namespace WindowsFormsApp1
             this.ContactName.TabIndex = 3;
             this.ContactName.Text = "Name";
             // 
-            // textBox2
+            // textBoxContactNo
             // 
-            this.textBox2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(184, 348);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(254, 27);
-            this.textBox2.TabIndex = 6;
+            this.textBoxContactNo.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxContactNo.Location = new System.Drawing.Point(184, 348);
+            this.textBoxContactNo.Name = "textBoxContactNo";
+            this.textBoxContactNo.Size = new System.Drawing.Size(254, 27);
+            this.textBoxContactNo.TabIndex = 6;
             // 
             // ContactNo
             // 
@@ -124,14 +123,14 @@ namespace WindowsFormsApp1
             this.ContactNo.TabIndex = 5;
             this.ContactNo.Text = "Contact No";
             // 
-            // textBox3
+            // textBoxAddress
             // 
-            this.textBox3.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(184, 413);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(254, 131);
-            this.textBox3.TabIndex = 8;
+            this.textBoxAddress.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxAddress.Location = new System.Drawing.Point(184, 413);
+            this.textBoxAddress.Multiline = true;
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(254, 131);
+            this.textBoxAddress.TabIndex = 8;
             // 
             // Address
             // 
@@ -166,7 +165,6 @@ namespace WindowsFormsApp1
             this.Gender.Size = new System.Drawing.Size(70, 20);
             this.Gender.TabIndex = 10;
             this.Gender.Text = "Gender";
-            this.Gender.Click += new System.EventHandler(this.label1_Click);
             // 
             // buttonAdd
             // 
@@ -216,15 +214,15 @@ namespace WindowsFormsApp1
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(527, 272);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(784, 335);
-            this.dataGridView1.TabIndex = 15;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(527, 272);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 29;
+            this.dataGridView.Size = new System.Drawing.Size(784, 335);
+            this.dataGridView.TabIndex = 15;
             // 
             // labelSearch
             // 
@@ -262,18 +260,18 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.labelSearch);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.Gender);
             this.Controls.Add(this.comboGender);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.Address);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxContactNo);
             this.Controls.Add(this.ContactNo);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.ContactName);
             this.Controls.Add(this.textBoxContactID);
             this.Controls.Add(this.contactID);
@@ -283,7 +281,7 @@ namespace WindowsFormsApp1
             this.Text = "Econtacts";
             this.Load += new System.EventHandler(this.EContacts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -295,11 +293,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Label contactID;
         private System.Windows.Forms.TextBox textBoxContactID;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label ContactName;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxContactNo;
         private System.Windows.Forms.Label ContactNo;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.Label Address;
         private System.Windows.Forms.ComboBox comboGender;
         private System.Windows.Forms.Label Gender;
@@ -307,7 +305,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
