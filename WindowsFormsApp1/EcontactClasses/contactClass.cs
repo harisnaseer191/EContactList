@@ -16,6 +16,37 @@ namespace WindowsFormsApp1.EcontactClasses
         public string Gender { get; set; }
         static string myconnstring = ConfigurationManager.ConnectionStrings["connstring"].ConnectionString;
 
+
+        public DataTable Search(string keyword)
+        {
+            // Creating Database Connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            // response type
+            DataTable dt = new DataTable();
+            try
+            {
+                // Writing SQL COmmand
+                string sql = "SELECT * FROM tbl_contact WHERE Name LIKE '%"+keyword+ "%' OR  Address LIKE '%" + keyword + "%' OR  ContactNo LIKE '%" + keyword + "%'";
+                // Creating SQL Command
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                // Creating Sql Aapter
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+
+        }
         public DataTable Select()
         {
             // Creating Database Connection
@@ -107,7 +138,7 @@ namespace WindowsFormsApp1.EcontactClasses
             try
             {
                 // sql query
-                string sql = "UPDATE tbl_cotact SET Name=@Name, ContactNo=@ContactNo, Address=@Address, Gender=@Gender WHERE ContactId=@ContactID";
+                string sql = "UPDATE tbl_contact SET Name=@Name, ContactNo=@ContactNo, Address=@Address, Gender=@Gender WHERE ContactId=@ContactID";
 
                 // Creating SQL Command
                 SqlCommand cmd = new SqlCommand(sql, conn);

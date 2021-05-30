@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
             this.buttonClear = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.labelSearch = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -190,6 +190,7 @@ namespace WindowsFormsApp1
             this.buttonUpdate.TabIndex = 12;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonDelete
             // 
@@ -202,6 +203,7 @@ namespace WindowsFormsApp1
             this.buttonDelete.TabIndex = 13;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonClear
             // 
@@ -213,6 +215,7 @@ namespace WindowsFormsApp1
             this.buttonClear.TabIndex = 14;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // dataGridView
             // 
@@ -223,6 +226,7 @@ namespace WindowsFormsApp1
             this.dataGridView.RowTemplate.Height = 29;
             this.dataGridView.Size = new System.Drawing.Size(784, 335);
             this.dataGridView.TabIndex = 15;
+            this.dataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_RowHeaderMouseClick);
             // 
             // labelSearch
             // 
@@ -234,13 +238,14 @@ namespace WindowsFormsApp1
             this.labelSearch.TabIndex = 16;
             this.labelSearch.Text = "Search";
             // 
-            // textBox4
+            // textBoxSearch
             // 
-            this.textBox4.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(627, 189);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(684, 39);
-            this.textBox4.TabIndex = 17;
+            this.textBoxSearch.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSearch.Location = new System.Drawing.Point(627, 189);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(684, 39);
+            this.textBoxSearch.TabIndex = 17;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // pictureBox1
             // 
@@ -251,6 +256,7 @@ namespace WindowsFormsApp1
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // EContacts
             // 
@@ -258,7 +264,7 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1465, 766);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.buttonClear);
@@ -307,7 +313,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label labelSearch;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
